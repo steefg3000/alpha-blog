@@ -29,6 +29,11 @@
   height: 500px;
 }
 
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
 .footer {
   position: fixed;
   left: 0;
