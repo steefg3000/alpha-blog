@@ -14,9 +14,8 @@ class CategoriesController < ApplicationController
     @articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
 
-  
-
   def edit
+
   end
 
   def create
@@ -30,6 +29,12 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    if @category.update(category_params)
+      flash[:notice] = "Category has successfully been updated"
+      redirect_to @category
+    else
+      render 'edit'
+    end  
   end
 
 
